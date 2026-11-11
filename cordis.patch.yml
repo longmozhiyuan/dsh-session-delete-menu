@@ -1,0 +1,5 @@
+# dsh-session-delete-menu bundle 层：插入会话删除菜单项插件行。
+- insert:
+    - id: dsh-session-delete-menu
+      name: 'dsh-session-delete-menu'
+      config: {}

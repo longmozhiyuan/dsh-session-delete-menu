@@ -1,0 +1,50 @@
+{
+  "name": "dsh-session-delete-menu",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeepSeek Harness session delete menu —— adds a red “删除对话 / Delete chat” item to the sidebar workspace session context menu, with a two-step confirmation before the session log is removed from disk. | DSH 侧栏会话右键菜单删除项——在归档之外增加“删除对话”，二次确认后物理删除会话记录。",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek-harness-plugin",
+    "session",
+    "delete",
+    "cordis"
+  ],
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.1-rc.2": "compatible"
+      }
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-rc <5"
+  },
+  "engines": {
+    "node": "^22.15.0 || >=24.0.0"
+  }
+}
